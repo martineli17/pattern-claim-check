@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package message_content;
+
+service MessageContentService {
+  rpc add (MessageContentAddRequest) returns (MessageContentAddResponse) {}
+}
+
+message MessageContentAddRequest {
+  string content = 1;
+}
+
+message MessageContentAddResponse {
+    string accessKey = 1;
+}

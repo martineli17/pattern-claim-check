@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package message_content;
+
+service MessageContentService {
+  rpc get (MessageContentGetRequest) returns (MessageContentGetResponse) {}
+  rpc markAsUsed (MessageContentMarkAsUsedRequest) returns (Empty) {}
+}
+
+message MessageContentGetRequest {
+  string accessKey = 1;
+}
+
+message MessageContentGetResponse {
+    string content = 1;
+}
+
+message MessageContentMarkAsUsedRequest {
+  string accessKey = 1;
+}
+
+message Empty {
+}

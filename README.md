@@ -37,7 +37,7 @@ DATABASE_PASSWORD="test"
 DATABASE_NAME="test"
 ```
 
-### [SendingApp}(https://github.com/martineli17/pattern-claim-check/tree/master/sending-app)
+### [SendingApp](https://github.com/martineli17/pattern-claim-check/tree/master/sending-app)
 Nesta aplicação, existe um endpoint de demonstração que receberá um payload qualquer e, através da quantidade de bytes deste payload, será definido se o conteúdo da mensagem irá ser salvo no armazenamento externo gerenciado pelo Manager. Caso não seja necessário, o conteúdo da mensagem é enviado diretamente por mensageria.
 
 A aplicação utiliza o serviço de mensageria SQS da AWS.
@@ -54,7 +54,7 @@ AWS_ENDPOINT=""
 AWS_QUEUE_ENDPOINT=""
 ```
 
-### [ReceivingApp}(https://github.com/martineli17/pattern-claim-check/tree/master/receiving-app)
+### [ReceivingApp](https://github.com/martineli17/pattern-claim-check/tree/master/receiving-app)
 Nesta aplicação, existe um subscriber responsável por receber os dados da fila na qual a aplicação `SendingApp` envia a mensagem. No processamento desse subscriber, é verificado se contém alguma chave de acesso para o conteúdo e, caso tenha, é solicitado para o `Manager` o retorno deste conteúdo que foi armazenado.
 
 Após o processamento ser finalizado, é informado para o `Manager` que tal conteúdo já foi utilizado, assim o mesmo é removido do banco de dados.
